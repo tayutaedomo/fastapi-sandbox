@@ -11,13 +11,30 @@ $ pip install --upgrade pip
 $ pip install -r requirements.txt
 ```
 
+
 ## Local Server
 ```
 $ cd fastapi-sandbox
 $ source venv/bin/activate
 $ uvicorn app:app --reload
 $ open 'http://127.0.0.1:8000'
+$ open 'http://127.0.0.1:8000/docs'
 ```````
-Open "http://127.0.0.1:8000" with Web Browser.
-Open "http://127.0.0.1:8000/docs" with Web Browser.
+
+
+## Docker
+```
+$ cd fastapi-sandbox
+$ docker build -t fastapi .
+$ docker run --rm -it -e PORT=8080 -p 8080:8080 fastapi
+$ open 'http://0.0.0.0:8080'
+```
+
+
+## Cloud Run
+```
+$ cd fastapi-sandbox
+$ gcloud builds submit --tag gcr.io/[PROJECT-ID]/fastapi
+$ gcloud run deploy --image gcr.io/[PROJECT-ID]/fastapi --platform managed
+```
 
