@@ -31,3 +31,10 @@ $ open 'http://0.0.0.0:80'
 ```
 
 
+## Cloud Run
+```
+$ cd fastapi-sandbox
+$ gcloud builds submit --tag gcr.io/[PROJECT-ID]/fastapi
+$ gcloud run deploy --image gcr.io/[PROJECT-ID]/fastapi --platform managed
+```
+
