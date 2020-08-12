@@ -26,8 +26,8 @@ $ open 'http://127.0.0.1:8000/docs'
 ```
 $ cd fastapi-sandbox
 $ docker build -t fastapi .
-$ docker run --rm -it -p 80:80 fastapi
-$ open 'http://0.0.0.0:80'
+$ docker run --rm -it -e PORT=8080 -p 8080:8080 fastapi
+$ open 'http://0.0.0.0:8080'
 ```
 
 
